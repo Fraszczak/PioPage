@@ -2,27 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>@ViewData["Title"] - PioPage</title>
+    <link href="http://font.googlepis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PioPage</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="fab fa-pied-piper-pp fa-lg mr-2"></i></i>PioPage</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <form class="form-inline my-2 my-lg-0" asp-controller="Home" asp-action="Search">
+                        <input class="form-control mr-sm-2" type="text" name="SearchString">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Filter"><i class="fas fa-search"></i></button>
+                    </form>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item pl-1 active">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="fas fa-home fa-fw mr-1"></i>Home
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li class="nav-item pl-1">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Tech">
+                                <i class="fas fa-laptop-code fa-fw mr-1"></i>Tech
+                            </a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a class="nav-link disabled text-black-50" aria-disabled="True" tabindex="-1" asp-area="" asp-controller="Home" asp-action="Shop">
+                                <i class="fas fa-shopping-cart fa-fw mr-1"></i>Shop
+                            </a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Author">
+                                <i class="fas fa-user fa-fw mr-1"></i>Author
+                            </a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <i class="fas fa-user-shield mr-1"></i>Privacy
+                            </a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SingUp">
+                                <i class="fas fa-user-plus fa-fw mr-1"></i>Sing up
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -35,14 +65,44 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="jumbotron jumbotron-fluid bg-secondary p-4 mt-5 mb-0">
         <div class="container">
-            &copy; 2020 - PioPage - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                    <div class="card bg-secondary border-0">
+                        <div class="card-body text-light text-center">
+                            <p class="d-inline lead">Copyright &copy; @ViewBag.Year</p>
+                            <h5 class="card-title text-white display-4">Piotr Frąszczak</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                    <div class="card bg-secondary border-0">
+                        <div class="card-body text-light text-center">
+                            <h5 class="card-title text-white display-4">Kontakt</h5>
+                            <a class="text-light d-block lead" style="margin-left: -20"><i class="fas fa-phone-alt mr-2"></i>519 899 160</a>
+                            <a class="text-light d-block lead"><i class="fas fa-envelope mr-2"></i>piotr.fraszczak@hotmail.com</a>
+                        </div>
+                    </div>
+                 </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                    <div class="card bg-secondary border-0">
+                        <div class="card-body text-light text-center">
+                            <h5 class="card-title text-white display-4">Social Media</h5>
+                            <a class="text-light"><i class="fab fa-facebook fa-fw fa-2x"></i></a>
+                            <a class="text-light"><i class="fab fa-facebook fa-fw fa-2x"></i></a>
+                            <a class="text-light"><i class="fab fa-facebook fa-fw fa-2x"></i></a>
+                            <a class="text-light"><i class="fab fa-facebook fa-fw fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/66d4f5735b.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
